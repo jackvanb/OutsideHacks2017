@@ -1,0 +1,59 @@
+<% include partials/header %>
+
+<div style="text-align: center">
+      <!-- Modal Trigger -->
+  <!--<a class="waves-effect waves-light btn modal-trigger" href="#modal1">Join Group</a>-->
+  <button data-target="modal1" style = "padding-right: 36px;padding-left: 35px;" class="btn modal-trigger">Join Group</button>
+
+  <!-- Modal Structure -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <h4>Join Group</h4>
+      <p>Enter The Group's Code</p>
+    </div>
+    <div class="row">
+        <form class="col s12">
+            <div class="input-field col 6">
+                <input id="gCode" type="text" class="validate">
+                <label for="gCode">Group Code</label>
+            </div>
+        </form>
+    </div>
+  </div>
+  <button data-target="modal2" style = "padding-left: 27px; padding-right: 27px;" class="btn modal-trigger">Create Group</button>
+
+  <!-- Modal Structure -->
+  <div id="modal2" class="modal">
+    <div class="modal-content">
+      <h4>Create Group</h4>
+      <form action = "/creategroup" method = "POST">
+      <input name = "Gname" type="text" class="validate">
+                <label for="gCode">Group Name</label>
+      
+      <p>Are you sure you want to create a new group?</p>
+    </div>
+    <div class="modal-footer">
+        <button type = "submit" class="modal-action modal-close waves-effect waves-green btn-flat">Create</button>
+    </div>
+  </form>
+  </div>
+</div>
+
+<div id="gTables">
+    <div class="row col-md-6 col-md-offset-2 custyle">
+        <table class="table table-striped custab">
+        <thead>
+            <tr>
+                <th>Groups</th>
+                <th class='text-right'>Placing</th>
+            </tr>
+        </thead>
+                <tr>
+                    <td name='group'><a href="#">Group</a></td>
+                    <td name='place' class='text-right'>Place</td>
+                </tr>
+        </table>
+    </div>
+</div>
+
+<% include partials/footer %>

@@ -1,0 +1,77 @@
+    <html>
+        <head>
+  
+            <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+            <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" -->
+            <!--integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">-->
+             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css">
+            <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+            <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+            <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+
+            
+        
+        </head>
+        
+        <body style = "font-family: 'Noto Sans', sans-serif; background-image: linear-gradient(to top, rgba(255,255,0,0.5), rgba(128, 223, 255, 0.5))" >
+  
+            <section>
+            <% if(isAuthenticated) { %>  
+                <nav class="red lighten-1" style="margin-bottom:20px">
+                  <div class="nav-wrapper">
+                    <a  href="/" class="brand-logo"><img src="https://www.sfoutsidelands.com/assets/images/favicon/apple-touch-icon-144x144.png?v=2" height="70" width="70"></a>
+                  </div>
+                </nav>
+             <% } %>
+
+<% if(isAuthenticated) { %>
+  <div class="fixed-action-btn toolbar active red lighten-1" data-origin-bottom="713" data-origin-left="335" data-origin-width="56" data-open="true" style="transform 0.2s cubic-bezier(0.55, 0.085, 0.68, 0.53), background-color 0s linear 0.2s; text-align: center; width: 100%; bottom: 0px; left: 0px; overflow: hidden; background-color: rgb(244, 67, 54);">
+    <a class="btn-floating btn-large red" style="transition: transform 0.2s; overflow: visible;">
+      <i class="large material-icons">mode_edit</i>
+    
+    <div class="fab-backdrop" style="background-color: #ef5350 ; transform: scale(10.35); transition: transform 0.2s cubic-bezier(0.55, 0.055, 0.675, 0.19);"></div></a>
+    <ul>
+      
+      <li class="waves-effect waves-light"><a href="/lineup" style="opacity: 1;"><i class = "material-icons" >clear_all</i></a></li>
+      <li class="waves-effect waves-light"><a href="/checkin" style="opacity: 1;"><i class = "material-icons" >beenhere</i></a></li>
+      <li class="waves-effect waves-light"><a href="/leaderboard" style="opacity: 1;"><i class = "material-icons" >format_list_numbered</i></a></li>
+      <li class="waves-effect waves-light"><a href="/logout" style="opacity: 1;"><i class = "material-icons" >exit_to_app</i></a></li>
+      
+
+    </ul>
+  </div>
+<% } else { %>
+
+  <nav class="red lighten-1" style="margin-bottom:20px">
+    <div class="nav-wrapper">
+      <a  href="/" class="brand-logo"><img src="https://www.sfoutsidelands.com/assets/images/favicon/apple-touch-icon-144x144.png?v=2" height="70" width="70"></a>
+    </div>
+  </nav>
+  <!--<div class="fixed-action-btn toolbar active red lighten-1" data-origin-bottom="713" data-origin-left="335" data-origin-width="56" data-open="true" style="position: relative; transition: transform 0.2s cubic-bezier(0.55, 0.085, 0.68, 0.53), background-color 0s linear 0.2s; text-align: center; width: 100%; bottom: 0px; left: 0px; overflow: hidden; background-color: rgb(244, 67, 54);">-->
+  <!--    <a class="btn-floating btn-large red" style="transition: transform 0.2s; overflow: visible;">-->
+  <!--      <i class="large material-icons">mode_edit</i>-->
+      
+  <!--    <div class="fab-backdrop" style="background-color: rgb(244, 67, 54); transform: scale(10.35); transition: transform 0.2s cubic-bezier(0.55, 0.055, 0.675, 0.19);"></div></a>-->
+  <!--    <ul>-->
+        
+
+        
+  
+
+<% } %>
+  <div class = "w3-container" style = "padding-right: 25px; padding-left: 25px; padding-bottom: 50px;">
+<!--    <a class="btn-floating btn-large red">-->
+<!--      <i class="large material-icons">mode_edit</i>-->
+<!--    <div class="fab-backdrop" style="background-color: rgb(244, 67, 54); transform: scale(10.35); transition: transform 0.2s cubic-bezier(0.55, 0.055, 0.675, 0.19);">-->
+      
+<!--    </div>-->
+<!--    </a>-->
+<!--    <ul>-->
+<!--      <li class="waves-effect waves-light"><a href="#!"><i class="material-icons">insert_chart</i></a></li>-->
+<!--      <li class="waves-effect waves-light"><a href="#!"><i class="material-icons">format_quote</i></a></li>-->
+<!--      <li class="waves-effect waves-light"><a href="#!"><i class="material-icons">publish</i></a></li>-->
+<!--      <li class="waves-effect waves-light"><a href="#!"><i class="material-icons">attach_file</i></a></li>-->
+<!--    </ul>-->
+<!--  </div>-->
+<!--class="fixed-action-btn toolbar"-->
+                  

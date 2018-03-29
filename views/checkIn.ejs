@@ -1,0 +1,32 @@
+<% include partials/header %>
+
+<div ="Stage" style="margin: auto">
+          <% for(var key in artists) { %>
+          <div class="row">
+              <div class="col s12 m6">
+                <div class="card">
+                  <div class="card-image">
+                    <img src='<%= artists[key].image %>'>
+                    <span class="card-title"><%= key %></span>
+                  </div>
+                  <div class="card-content">
+                    <p> <%= artists[key].description %> </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+        <form action ="/checkin" method = "POST">
+          <input type = "hidden" name ="key" value = "<%= key %>">
+          <button type = "submit" class="waves-effect waves-light btn" style="text: align-center" id = "<%= key %>">Check In</button>
+        </form>     
+      <% } %>
+</div>
+
+<script>
+    function checkIn(key)
+    {
+        
+    }
+</script>
+
+<% include partials/footer %>

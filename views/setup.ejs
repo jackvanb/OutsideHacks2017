@@ -1,0 +1,176 @@
+<% include partials/header %>
+
+<!--https://bootsnipp.com/snippets/featured/striped-table-30-->
+
+<div class="">
+        <h3 style="text-align: left; font-weight: bold;">Artists</h3>
+        <h6 style="text-align: left">Select artists from 4 different tiers who will be performing at Outside Lands.</h6>
+        <h6>Create the line-up that you believe will attract the largest audiences!</h6>
+    </div>  
+
+
+
+
+  
+  <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Pick Artists</a>
+  <!-- Modal Structure -->
+  <div id="modal1" style = "max-height: 100%; height: 80%; width: 95%"class="modal modal-fixed-footer">
+    <div class="modal-content">
+      <h4>Platinum Tier- Select 1 Artist</h4>
+      <% for(var key in artists[1]) { %>
+          <div class="row">
+              <div class="col s12 m6">
+                <div class="card">
+                  <div class="card-image">
+                    <img src='<%= artists[1][key].image %>'>
+                    <span class="card-title"><%= key %></span>
+                    <button class="btn-floating halfway-fab waves-effect waves-light red" value = 'false' id = "<%= key %>" onclick="return addTo('<%= key %>', '1', 't1')"> <i class="material-icons">add</i></button>
+                  </div>
+                  <div class="card-content">
+                    <p> <%= artists[1][key].description %> </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+      <% } %>
+    </div>
+    <div class="modal-footer">
+      <a href="#modal2" id = "t1" class="modal-action modal-close waves-effect waves-green btn modal-trigger disabled">Next</a>
+    </div>
+  </div>
+
+
+ <div id="modal2" style = "max-height: 100%; height: 80%; width: 95%"class="modal modal-fixed-footer">
+    <div class="modal-content">
+      <h4>Gold Tier - Select 2 Artists</h4>
+      <% for(var key in artists[2]) { %>
+          <div class="row">
+              <div class="col s12 m6">
+                <div class="card">
+                  <div class="card-image">
+                    <img src='<%= artists[2][key].image %>'>
+                    <span class="card-title"><%= key %></span>
+                    <button value = "false" class="btn-floating halfway-fab waves-effect waves-light red" value = 'false' onclick="return addTo('<%= key %>', '2', 't2')" id = "<%= key %>"><i class="material-icons">add</i></button>
+                  </div>
+                  <div class="card-content">
+                    <p> <%= artists[2][key].description %> </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+      <% } %>
+
+    </div>
+    <div class="modal-footer">
+      <a href="#modal3" id = "t2" class="modal-action modal-close waves-effect waves-green btn modal-trigger disabled">Next</a>
+    </div>
+  </div>
+
+ <div id="modal3" style = "max-height: 100%; height: 80%; width: 95%"class="modal modal-fixed-footer">
+    <div class="modal-content">
+      <h4>Silver Tier - Select 3 Artists</h4>
+      <% for(var key in artists[3]) { %>
+          <div class="row">
+              <div class="col s12 m6">
+                <div class="card">
+                  <div class="card-image">
+                    <img src='<%= artists[3][key].image %>'>
+                    <span class="card-title"><%= key %></span>
+                    <button value = "false" class="btn-floating halfway-fab waves-effect waves-light red" value = 'false' onclick="return addTo('<%= key %>', '3', 't3')" id = "<%= key %>"><i class="material-icons">add</i></button>
+                  </div>
+                  <div class="card-content">
+                    <p> <%= artists[3][key].description %> </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+      <% } %>
+
+    </div>
+    <div class="modal-footer">
+      <a href="#modal4" id="t3" class="modal-action modal-close waves-effect waves-green btn modal-trigger disabled">Next</a>
+    </div>
+  </div>
+  
+   <div id="modal4" style = "max-height: 100%; height: 80%; width: 95%"class="modal modal-fixed-footer">
+    <div class="modal-content">
+      <h4>Bronze Tier - Select 4 Artists</h4>
+      <% for(var key in artists[4]) { %>
+          <div class="row">
+              <div class="col s12 m6">
+                <div class="card">
+                  <div class="card-image">
+                    <img src='<%= artists[4][key].image %>'>
+                    <span class="card-title"><%= key %></span>
+                    <button class="btn-floating halfway-fab waves-effect waves-light red" value = 'false' onclick="return addTo('<%= key %>', '4', 't4')" id = "<%= key %>"><i class="material-icons">add</i></button>
+                  </div>
+                  <div class="card-content">
+                    <p> <%= artists[4][key].description %> </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+      <% } %>
+
+    </div>
+    <div class="modal-footer">
+      <form action = "/createlineup" method = "POST">
+        <button id = "t4" class="btn waves-effect waves-light disabled" onclick = "return combineArrays()" type="submit" name="action" onclick="combineArrays" >Create Lineup
+          <i class="material-icons right">send</i>
+        </button>
+        <input id = "hide" type = "hidden" name = "lineup" value = "">
+      </form>
+    </div>
+  </div>
+
+<script>
+ 	var temp = [];
+ 	var arrayCount = -1;
+	var toggles = {
+	    't1': [],
+	    't2': [],
+	    't3': [],
+	    't4': []
+	};
+	
+	function addTo(key, max, selector) {
+		
+		var button = document.getElementById(key)
+		if(button.getAttribute("value") == 'false'){
+		  button.setAttribute("class","btn-floating halfway-fab waves-effect waves-light grey");
+		  button.setAttribute("value", "true");
+		  toggles[selector].push(key);
+    } else {
+      button.setAttribute("class","btn-floating halfway-fab waves-effect waves-light red" );
+      button.setAttribute("value", "false");
+      index = toggles[selector].indexOf(key);
+      toggles[selector].splice(index, 1);
+    }  
+		
+		
+		if (toggles[selector].length == max && selector != 't4') {
+		  document.getElementById(selector).setAttribute("class", "modal-action modal-close waves-effect waves-green btn modal-trigger" );
+		} 
+		else if(toggles[selector].length == max) {
+		  document.getElementById(selector).setAttribute("class", "btn waves-effect waves-light");
+		} else {
+		  document.getElementById(selector).setAttribute("class","modal-action modal-close waves-effect waves-green btn modal-trigger disabled" )
+		}
+    
+	  
+	}
+	
+	
+function combineArrays(){
+  var first = toggles['t1'].concat(toggles['t2']);
+  var second = toggles['t3'].concat(toggles['t4']);
+  var final = first.concat(second);
+  
+  document.getElementById("hide").setAttribute("value", final);
+  return true;
+}
+	
+</script>
+
+<% include partials/footer %>
+

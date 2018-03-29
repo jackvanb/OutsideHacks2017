@@ -1,0 +1,29 @@
+<% include partials/header %>
+
+<table class = "highlight"v>
+        <thead>
+          <tr>
+              <th>Artist</th>
+              <th>Points</th>
+              
+          </tr>
+        </thead>
+
+        <tbody>
+        <% for(var key in lineup){ %>
+          <tr>
+            <td> <%= key %> </td>
+            <td> <%= lineup[key].points %> </td>
+            
+          </tr>
+    <% } %>
+        </tbody>
+      </table>
+      <hr style = "border-top: 1px solid #000">
+  
+   <div class="collection" style = "border: none;">
+    <a href="#!" style = "padding-bottom: 80px; background-color: transparent;" class="collection-item"><span class="badge" style = "padding-right: 38px; font-weight: bold; font-size: 20px;"><%= total %> </span>Your Total Points</a>
+  </div>
+
+
+<% include partials/footer %>

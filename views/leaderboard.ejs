@@ -1,0 +1,30 @@
+<% include partials/header %>
+
+<div class="container flow-text" style = "padding-bottom: 30px;">
+  <div class="col s12" id="header">
+    <h2 class="center-align">Global Leaderboard</h2>
+  </div>
+  <div id="app" class="col s12"></div>
+
+<table class="highlight">
+  <thead>
+    <tr>
+    <th>User</th>
+    <th>Total Score</th>
+    </tr>
+  </thead>
+  
+  <tbody>
+    
+
+<% users.forEach(function(u) { %>
+  <tr>
+  <td> <%=u.username%> </td>
+  <td> <%=getTotal(u.lineup)%> </td>
+  </tr>
+<% }) %>
+  </tbody>
+</table>
+</div>
+<% include partials/footer %>
+

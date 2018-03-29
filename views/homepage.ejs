@@ -1,0 +1,36 @@
+<% include partials/header %>
+
+ <div class="row">
+    <div class="col s12 m6">
+      <div class="card red lighten-1">
+        <div class="card-content white-text">
+          <span class="card-title" style="text-align: center">Ranger Dave's Lineup Games</span>
+          
+              <img src='https://www.sfoutsidelands.com/assets/images/favicon/apple-touch-icon-144x144.png?v=2' style="margin-left: 25%; margin-bottom: 10px;">
+         
+          <p>Hey everyone! If you're going to be enjoying Outside Lands you might as well have some friendly competition going on.
+             Compete against your friends to see who can guess which artists get the biggest audience.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+<% if (isAuthenticated == false) { %>
+      <div class="fixed-action-btn toolbar active red lighten-1" data-origin-bottom="713" data-origin-left="335" data-origin-width="56" data-open="true" style="position: relative; transition: transform 0.2s cubic-bezier(0.55, 0.085, 0.68, 0.53), background-color 0s linear 0.2s; text-align: center; width: 100%; bottom: 0px; left: 0px; overflow: hidden; background-color: rgb(244, 67, 54);">
+      <a class="btn-floating btn-large red" style="transition: transform 0.2s; overflow: visible;">
+        <i class="large material-icons">mode_edit</i>
+      
+      <div class="fab-backdrop" style="background-color: rgb(244, 67, 54); transform: scale(10.35); transition: transform 0.2s cubic-bezier(0.55, 0.055, 0.675, 0.19);"></div></a>
+      <ul>
+        
+
+
+        <li class="waves-effect waves-light"><a href="/login" style="opacity: 1; background-color: #ef5350; ">Login</a></li>
+        <li class="waves-effect waves-light"><a href="/register" style="opacity: 1; background-color: #ef5350;">Register</a></li>
+        <% } %>
+  </ul>
+  </div>
+
+    
+    
+<% include partials/footer %>

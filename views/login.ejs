@@ -1,0 +1,23 @@
+<% include partials/header %>
+
+
+<h1 style = "text-align: center; font-size: 50px;">
+  Login
+</h1>
+
+<form action = "/login" method = "POST" style = "width: 100%; ">
+  <div class="form-group">
+    <label for="formGroupExampleInput">Username</label>
+    <input type="text" class="form-control" name = "username">
+  </div>
+  <div class="form-group">
+    <label for="formGroupExampleInput2">Password</label>
+    <input type="password" class="form-control" name = "password">
+  </div>
+<button class="btn waves-effect waves-light" type="submit" name="action">Login
+    <i class="material-icons right">send</i>
+  </button>
+</form>
+
+
+<% include partials/footer %>
